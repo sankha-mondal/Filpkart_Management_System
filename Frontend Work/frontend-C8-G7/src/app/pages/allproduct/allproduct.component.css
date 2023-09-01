@@ -1,0 +1,7 @@
+pro {
+    font-weight:bold;
+    font-size: large;
+}
+.shad:hover {
+    box-shadow: 0 0 10px rgba(33,33,33,.8);
+  }

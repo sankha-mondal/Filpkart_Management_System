@@ -1,0 +1,187 @@
+<div class="container" *ngIf="!flag">
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <!-- <h4>Please Wait... Uploading...</h4> -->
+      <img src="https://media1.giphy.com/media/qMcbTtakNy2D60fdtk/giphy.gif" style="width:300px;height:60%;">
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
+
+<!---------------------------------------------------------------------------------------------->
+
+<h1 align="center" class="display-4 "><b style="color:red;">All Products...</b></h1><br>
+<a *ngIf="currentUser?.role == Role.Customer" style="color: inherit"
+   routerLink="/seller/product/new" class="float-right mb-3"><i class="fas fa-plus fa-2x">Add</i>
+</a>
+
+<!---------------------------------------------------------------------------------------------->
+
+<!-- Product report download-->
+<button (click)="exportAsXLSX()" class="float-right mb-3">
+    <i class="fa fa-download" aria-hidden="true" style="font-size:42px;color:blue"></i>
+</button> <br>
+
+<!----------------------------------------------------------------------------------------------->
+
+    <!--Search a product-->
+    <label ><h4><b>Search Product: </b></h4></label>&nbsp;
+    <label>
+        <h4><input type = "text" name="search" [(ngModel)]="searchText" 
+                  placeholder ="Your door to happiness opens with a search..." style="width:200%;border:2px solid;"/>
+        </h4>
+    </label>
+    <br><br>
+
+<!------------------------------------------------------------------------------------------>
+
+
+
+<!--------------------------------------------------------------------------------------------->
+
+<!-- <form>
+    <h5><input (change)="selectFile($event)" type="file"/></h5>
+</form> -->
+
+<!-- Bulk Upload -->
+<!-- <button (click)="uploadFile()" class="btn btn-success">
+    <h4>Bulk Upload</h4>
+</button> -->
+
+<!-- <button class="btn btn-success">
+    <a href="http://localhost:4300/" target="_blank"><h4 style="color:white;">Bulk Upload</h4></a>
+</button> -->
+
+<button class="btn btn-success">
+  <h4 style="color:white;" (click)="logout()" routerLink="/file" [queryParams]="{logout: true}">Bulk Upload</h4>
+</button>
+
+
+<!--------------------------------------------------------------------------------------------->
+
+<!--Manual Upload-->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float:right;">
+    <h4>Manual Upload</h4>
+</button>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel" style="color:red;">Insert Product</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+          <!-- Store Operation manual-->
+
+    <div>
+        <form #productRef = "ngForm" (ngSubmit)="storeProductDb(productRef)" style="color:brown;">
+            <label>Product Id: </label>
+            <input type="text" name="productId" class="input-group mb-2" ngModel required placeholder="Enter Random String as Number"/><br/>
+
+            <label>Product Name: </label>
+            <input type="text" name="productName" class="input-group mb-2" ngModel required placeholder="Enter Product Name"/><br/>
+
+            <label>Product Price: </label>
+            <input type="number" name="productPrice" class="input-group mb-2" ngModel required placeholder="Enter Product Price"/><br/>
+
+            <label>Product Stock: </label>
+            <input type="number" name="productStock" class="input-group mb-2" ngModel required placeholder="Enter Product Stock"/><br/>
+
+            <label>Product Description: </label>
+            <input type="text" name="productDescription" class="input-group mb-2" ngModel required placeholder="Enter Product Description"/><br/>
+
+            <label>Product Img URL: </label>
+            <input type="url" name="productIcon" class="input-group mb-2" ngModel required placeholder="Enter Product Image URL"/><br/>
+
+            <label>Product Status: </label>
+            <input type="number" name="productStatus" class="input-group mb-2" ngModel required placeholder="0 as available OR 1 as unavailable"/><br/>
+
+            <label>Product Category Type: </label>
+            <input type="number" name="categoryType" class="input-group mb-2" ngModel required placeholder="Enter Category as number 1,2,3..."/><br/>
+
+            <label>Product Create Time: </label>
+            <input type="text" name="createTime" class="input-group mb-2" ngModel required placeholder="2022-07-17T05:15:29.000+0000"/><br/>
+
+            <label>Product Update Time: </label>
+            <input type="text" name="updateTime" class="input-group mb-2" ngModel required placeholder="2022-07-23T09:46:03.889+0000"/><br/>
+
+
+            <input type="reset" class="btn btn-warning btn-lg" value="Reset"/>
+            <input type="submit" class="btn btn-primary btn-lg" value="Click to Store Product" [disabled]="productRef.invalid"/>
+        </form>
+    </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Store Product</button> -->
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+
+<!---------------------------------------------------------------------------------------------->
+
+<!--refresh -->
+  <label style="display:flex;justify-content:center;" onClick="window.location.reload();"><i class="fa fa-refresh" style="font-size:24px"></i></label>
+
+<!-------------------------------------------------------------------------------------------->
+
+<!--Product list -->
+<table id="table" class="table table-striped text-center" style="width:100%;">
+    <thead>
+    <tr>
+        <th scope="col"><h3>Photo</h3></th>
+        <th scope="col"><h3>Product Code</h3></th>
+        <th scope="col"><h3>Name</h3></th>
+        <th scope="col"><h3>Description</h3></th>
+        <th scope="col"><h3>Price</h3></th>
+        <th scope="col"><h3>Stock</h3></th>
+        <th scope="col"><h3>Status</h3></th>
+        <th scope="col"><h3>Action</h3></th>
+        <th scopr="col"><h3>Mail</h3></th>
+    </tr>
+    </thead>
+    <!--Search by 
+    <select ng-model="columns" ng-options="e for e in headers">
+        <option value=""></option>
+    </select>
+    Search <input type = "text" ng-model ="Search[columns]" placeholder ="Enter Some Text To Search" />-->
+    <tbody>
+    <tr *ngFor="let productInfo of page?.content | filter:searchText">
+        <th class="align-middle" scope="row">
+            <img height="100px" src="{{productInfo.productIcon}}" alt="{{productInfo.productName}}" style="border:2px solid black">
+        </th>
+        <td class="align-middle"><h4>{{productInfo.productId}}</h4></td>
+        <td class="align-middle"><h4><b style="color:red;">{{productInfo.productName}}</b></h4></td>
+        <td class="align-middle"><h4>{{productInfo.productDescription}}</h4></td>
+        <td class="align-middle"><h4>{{productInfo.productPrice | currency}}</h4></td>
+        <td class="align-middle"><h4><b style="color:red;">{{productInfo.productStock}}</b></h4></td>
+
+       
+        <td class="align-middle" *ngIf="ProductStatus[productInfo.productStatus]=='Available'"><h4><i class="material-icons" style="font-size:30px">event_available</i></h4></td>
+        <td class="align-middle" *ngIf="ProductStatus[productInfo.productStatus]=='Unavailable'"><h4><i class="material-icons" style="font-size:30px;color:darkorange;">event_busy</i></h4></td>
+      
+        <td class="align-middle">
+            <a style="display: block" routerLink="/seller/product/{{productInfo.productId}}/edit">
+                <h4 class="btn btn-primary"><i class='fas fa-edit' style='font-size:18px'></i></h4></a>
+
+        </td>
+        <td class="align-middle">
+            <button (click)=onSubmit() [disabled]="(productInfo.productStock >10)? true:false" class="btn btn-success"><h5><i class="material-icons" style="font-size:16px">contact_mail</i></h5></button>
+           <!-- <a  [ngClass]="{'isDisabled':'(productInfo.productStock >10)? true:false'}"style="display: block" class="isDisabled"  routerLink="/email">Email</a>-->
+        </td>
+
+    </tbody>
+</table>
+<app-pagination [currentPage]="page"></app-pagination>

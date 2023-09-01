@@ -1,0 +1,12 @@
+.img{
+    background-image: url(https://t3.ftcdn.net/jpg/02/24/64/56/360_F_224645618_dtpq1bEjnN67g3gampm39hg698AUC9tf.jpg);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    border-radius: 10px;
+}
+b {
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

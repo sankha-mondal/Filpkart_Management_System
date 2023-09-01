@@ -1,0 +1,181 @@
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+          <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Web_17_Tables_SubCLP_2386X686_2x_120522.jpg" class="w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Web_7_Decor_2386X686_2x_160522.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Web_6_WallAccents_2386X686_2x_210622.jpg" class="d-block w-100" alt="Clock Image">
+        </div>
+            <button class="carousel-control" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev" style="border:none;">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next" style="border:none;">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+      </div> <br><br>
+
+<!------------------------------------------------------------------------------------------------------------------>
+
+<div class="container-fluid">
+
+  <h1 align="center" class="display-4 mb-5"><b style="color:green;font-weight:800; ">{{title}}</b></h1>
+
+  <label ><h4><b>Search Product: </b></h4></label>&nbsp;
+    <label>
+        <h4><input type = "text" name="search" [(ngModel)]="searchText" 
+                  placeholder ="Your door to happiness opens with a search..." style="width:200%;border:2px solid;"/>
+        </h4>
+    </label><br><br><br>
+
+  <div class="row">
+    <div class="col-lg-3 border border-3 border-dark" style="padding-top:3%">
+
+      <div class="container overflow-hidden">
+        <div class="col gx-5">
+          <div class="row">
+              <div class="p-3">
+                
+                <div style="font-size:large;">
+                  <label>Filter by &nbsp;</label>
+                  <select [(ngModel)]='sortOfParamt'>
+                    <option class="option" value="productPrice">Price</option>
+                    <option class="option" value="productStock">Stock</option>
+                  </select>
+                  <button type="button" (click)="SortOn_OrderBy()">
+                    <i *ngIf="sortOrderBy === 'asc'" class='fas fa-sort-numeric-down-alt'></i>
+                    <i *ngIf="sortOrderBy === 'desc'" class='fas fa-sort-numeric-down'></i>
+                  </button>
+                </div>
+
+              </div>
+          </div>
+          <div class="row" style="margin-top:20%;">
+              <div class="p-3">
+              
+                <label style="font-size:large;">Category</label><br>
+
+                <div class="form-check" style="font-size:medium;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="Tables_&_Chairs" (click)="update_new(0)">
+                  <label class="form-check-label" for="Tables_&_Chairs">
+                    Tables & Chairs
+                  </label>
+                </div>
+                <div class="form-check" style="font-size:medium;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="Beds" (click)="update_new(1)">
+                  <label class="form-check-label" for="Beds">
+                    Beds
+                  </label>
+                </div>
+                <div class="form-check" style="font-size:medium;"> 
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="Sofas">
+                  <label class="form-check-label" for="Sofas">
+                    Sofas
+                  </label>
+                </div>
+                <div class="form-check" style="font-size:medium;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="Lighting">
+                  <label class="form-check-label" for="Lighting">
+                    Lighting
+                  </label>
+                </div>
+                <div class="form-check" style="font-size:medium;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="Dinnerwares">
+                  <label class="form-check-label" for="Dinnerwares">
+                    Dinnerwares
+                  </label>
+                </div>
+                <div class="form-check" style="font-size:medium;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="Wardrobes">
+                  <label class="form-check-label" for="Wardrobes">
+                    Wardrobes
+                  </label>
+                </div>
+                <div class="form-check" style="font-size:medium;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="Planters">
+                  <label class="form-check-label" for="Planters">
+                    Planters
+                  </label>
+                </div>
+                <div class="form-check" style="font-size:medium;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="Decorations">
+                  <label class="form-check-label" for="Decorations">
+                    Decorations
+                  </label>
+                </div>
+                <div class="form-check" style="font-size:medium;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="Cooktops">
+                  <label class="form-check-label" for="Cooktops">
+                    Cooktops
+                  </label>
+                </div>
+                <div class="form-check" style="font-size:medium;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="Mirrors">
+                  <label class="form-check-label" for="Mirrors">
+                    Mirrors
+                  </label>
+                </div>
+                <div class="form-check" style="font-size:medium;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="Televisions">
+                  <label class="form-check-label" for="Televisions">
+                    Televisions
+                  </label>
+                </div>
+                <div class="form-check" style="font-size:medium;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="Kids_and_Teens">
+                  <label class="form-check-label" for="Kids_and_Teens">
+                    Kids and Teens
+                  </label>
+                </div>
+                <div class="form-check" style="font-size:medium;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="Clocks">
+                  <label class="form-check-label" for="Clocks">
+                    Clocks
+                  </label>
+                </div>
+
+
+              </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+<!---------------------------------------------------------------------------------------------------------------->
+
+    <div class="col-lg-9">
+      <div class="row text-center">
+        <div *ngFor="let productInfo of page?.content | filter:searchText | sort:[sortOfParamt,sortOrderBy]" class="col-4 shad">
+
+          <div><br>
+            <img class="img-top" style="height:270px;width:340px;" src="{{productInfo.productIcon}}" alt="{{productInfo.productName}} Product Image">
+            <div class="card-body">
+              <h3 class="card-title" style="font-style:italic;">{{productInfo.productName}}</h3>
+              
+              
+              <div class="text-left">
+                <h4 class="card-test" style="color:blue;"><b class="pro">Description: </b><strong class="proin">{{productInfo.productDescription}}</strong></h4>
+                <h4 class="card-text" style="color:darkorange;"><b class="pro">Price: </b><strong class="proin">{{productInfo.productPrice | currency}}</strong></h4>
+                <h4 class="card-text" style="color:green;"><b class="pro">Stock: </b><strong class="proin">{{productInfo.productStock}}</strong></h4>
+                <p>Ships in <strong>2 day | Discount available</strong></p>
+                <!-- <h5 style="color:darkgreen;font-weight:900;"><b>Bank Offer | Free Shipping</b> </h5> -->
+                <h5 style="color:darkgreen;"><b style="font-weight:900;font-family:Verdana, Geneva, Tahoma, sans-serif;">Bank Offer | Free Shipping</b> </h5>
+              </div>
+              <br>
+              <a routerLink="/product/{{productInfo.productId}}" *ngIf="productInfo.productStatus == 0; else offBlock"
+                 class="btn btn-primary btn-lg"><h4>Get Details</h4></a><br>
+              <ng-template #offBlock><a class="btn btn-secondary btn-lg disabled"><h4>Unavailable</h4></a></ng-template><br>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+      <app-pagination  [currentPage]="page" ></app-pagination>
+    </div>
+  </div>
+</div>

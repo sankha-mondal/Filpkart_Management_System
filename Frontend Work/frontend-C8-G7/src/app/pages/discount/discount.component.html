@@ -1,0 +1,58 @@
+<h1 align="center" class="display-4 "><b style="color:red">Coupons</b></h1>
+    
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6">
+                <h1>Add Coupon</h1>
+                    <form>
+                        <input [(ngModel)]="coupon" type="text" class="form-control form-control-lg" id="coupon" name="coupon" placeholder="Enter coupon code"> 
+                        <input [(ngModel)]="coupon_price" type="text" class="form-control form-control-lg" id="coupon" name="coupon" placeholder="Enter the dicount percentage"> 
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button class="btn btn-warning" type="reset"><h4>Reset</h4></button>
+                            <button class="btn btn-primary" type="button" (click)=addCoupon(coupon,coupon_price)><h4>Add Coupon</h4></button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div><br><br>
+
+    <label ><h4><b>Search Discount: </b></h4></label>&nbsp;
+    <label>
+        <h4><input type = "text" name="search" [(ngModel)]="searchText" 
+                placeholder ="Your door to happiness opens with a search..." style="width:200%;border:2px solid;"/>
+        </h4>
+    </label>
+    <br><br>
+
+<table id="table" class="table table-striped text-center" style="width:100%;">
+    <thead>
+    <tr>
+        <th scope="col"><h3>Couponcode</h3></th>
+        <th scope="col"><h3>Discount Percentage</h3></th>
+        <th scope="col"><h3>Discount Status</h3></th>
+        <th scope="col"><h3>Action</h3></th> 
+    </tr>
+    </thead>
+    <!--Search by 
+    <select ng-model="columns" ng-options="e for e in headers">
+        <option value=""></option>
+    </select>
+    Search <input type = "text" ng-model ="Search[columns]" placeholder ="Enter Some Text To Search" />-->
+    <tbody>
+        <tr *ngFor="let coupon of page?.content | filter:searchText">
+        <th scope="row">
+                <p class="mb-0 ml-2" style="font-size: 14px;">{{coupon.id}}</p>
+          </th>
+          <td scope="row">
+                <p class="mb-0 ml-2" style="font-size: 14px;font-weight: 900;">{{coupon.d_percentage}}</p> 
+          </td>
+          <td scope="row">
+            <p class="mb-0 ml-2" style="font-size: 14px;font-weight: 900;">{{coupon.status}}</p> 
+          </td>
+          <td class="align-middle">
+            <button (click)=deleteCoupon(coupon.id)  class="btn btn-danger btn-lg"><h4>Delete</h4></button>
+          </td>
+        </tr>
+      </tbody>
+</table><br><br><br>
+<app-pagination [currentPage]="page"></app-pagination>

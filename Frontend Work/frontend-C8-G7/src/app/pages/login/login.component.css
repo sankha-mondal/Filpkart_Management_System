@@ -1,0 +1,12 @@
+.img{
+    background-image: url(https://img.freepik.com/free-photo/black-friday-elements-assortment_23-2149074076.jpg?w=2000);
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    align-items: center;
+    border-radius: 10px;
+}
+b {
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

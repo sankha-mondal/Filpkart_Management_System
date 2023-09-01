@@ -1,0 +1,48 @@
+<div class="container-fluid" *ngIf="flag">
+
+  <!-- <input (change)="selectFile($event)" type="file"/> -->
+
+  <div class="container-fluid">
+    <div class="row">
+
+        <div class="col-4"></div>
+        <div class="col-3">
+           <div class="p-3">
+                <div class="mb-3">
+                    <input (change)="selectFile($event)" class="form-control" type="file" id="formFile">
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="p-3">
+              <button (click)="uploadFile()" class="btn btn-lg"><h4>Upload</h4></button>
+            </div>
+        </div>
+        
+
+    </div>
+  </div>
+  
+
+
+</div>
+
+<!--------------------------------------------------------->
+
+<!-- Confirmation Message -->
+
+<div *ngIf="!flag" class="d-flex justify-content-center">
+
+  <!-- <h3>Type 1:</h3> -->
+
+  <img src="https://icon-library.com/images/spin-icon/spin-icon-2.jpg" style="width:40px;">
+  <span style="font-size:large;font-weight:bold;color:brown;">Please Wait... Uploading...</span>
+  <img src="https://icon-library.com/images/spin-icon/spin-icon-2.jpg" style="width:40px;">
+ 
+
+
+  <!-- <h3>Type 2:</h3> -->
+  <!-- <i class="fa fa-refresh fa-spin" style="font-size:24px"></i> -->
+  <!-- <img src="https://icon-library.com/images/progress-icon-gif/progress-icon-gif-1.jpg" style="width:300px;height:auto;">  -->
+
+</div>

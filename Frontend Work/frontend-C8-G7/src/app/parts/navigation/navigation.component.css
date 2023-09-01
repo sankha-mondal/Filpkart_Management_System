@@ -1,0 +1,42 @@
+h3 {
+    color: azure;
+}
+.nvimg {
+    height: 64px;
+    width: 100px;
+}
+h4 {
+    color: black;
+    text-align: center;
+}
+
+li {
+    width: auto;
+}
+#toggle {
+    font-size:15px;color:blue;
+    font-weight:bold;
+    border:2px solid;
+    border-radius:4px;
+}
+
+
+
+#fsearch {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-top: 5%;
+    border-radius:4px;
+    border:2px solid;
+    width: 180%;
+}
+#bsearch {
+    padding-top: 4%;
+    padding-bottom: 5%;
+    margin-left: 305%;
+    color:aliceblue;
+    font-weight:bold;
+    border:2px solid;
+    width: 120%;
+    border-radius:4px;
+}

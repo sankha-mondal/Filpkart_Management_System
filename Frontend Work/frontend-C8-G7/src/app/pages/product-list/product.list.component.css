@@ -1,0 +1,11 @@
+.isDisabled {
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+  }
+
+  b {
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

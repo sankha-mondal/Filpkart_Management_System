@@ -1,0 +1,11 @@
+.img{
+    background-image: url(https://img.freepik.com/premium-vector/painted-background-multicoloured-palette_23-2148427592.jpg?w=2000);
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    align-items: center;
+}
+b {  
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;  
+}

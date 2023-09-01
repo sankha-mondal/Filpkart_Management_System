@@ -1,0 +1,21 @@
+img {
+    border: 2px solid black;
+}
+b {  
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;  
+}
+label {
+    font-weight: bolder;
+}
+button {
+    color:white;
+    background-color:darkorange;
+    text-align: center;
+    width:20%;
+}
+.quan {
+    border: 2px solid black;
+    border-radius: 50%;
+}
+

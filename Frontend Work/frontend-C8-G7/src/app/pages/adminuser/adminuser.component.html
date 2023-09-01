@@ -1,0 +1,39 @@
+<h1 align="center" class="display-4 "><b style="color:red;">Users</b></h1>
+
+    <label ><h4><b>Search User: </b></h4></label>&nbsp;
+    <label>
+        <h4><input type = "text" name="search" [(ngModel)]="searchText" 
+                placeholder ="Your door to happiness opens with a search..." style="width:200%;border:2px solid;"/>
+        </h4>
+    </label><br><br>
+
+<table id="table" class="table table-striped text-center" style="width:100%;">
+    <thead>
+    <tr>
+        <th scope="col"><h3><b>Email</b></h3></th>
+        <th scope="col"><h3><b>Name</b></h3></th>
+        <th scope="col"><h3><b>Role</b></h3></th>
+        <th scope="col"><h3><b>Action</b></h3></th>  
+    </tr>
+    </thead>
+    <!--Search by 
+    <select ng-model="columns" ng-options="e for e in headers">
+        <option value=""></option>
+    </select>
+    Search <input type = "text" ng-model ="Search[columns]" placeholder ="Enter Some Text To Search" />-->
+    <tbody>
+    <tr *ngFor="let user of page?.content | filter:searchText">
+        
+        <td class="align-middle"><h4>{{user.email}}</h4></td>
+        <td class="align-middle"><h4>{{user.name}}</h4></td>
+        <td class="align-middle"><h4>{{user.role}}</h4></td>
+        <td class="align-middle">
+            <button  *ngIf="user.role=='ROLE_CUSTOMER'" (click)=addAdmin(user.email)  class="btn btn-success"><h4>Add Admin</h4></button>
+            <button  *ngIf="user.role=='ROLE_MANAGER'" (click)=removeAdmin(user.email)  class="btn btn-success"><h4>Remove Admin</h4></button>
+            <button  *ngIf="user.role=='ROLE_CUSTOMER'" (click)=deleteCustomer(user.email)  class="btn btn-danger"><h4>Delete Customer</h4></button>
+           <!-- <a  [ngClass]="{'isDisabled':'(productInfo.productStock >10)? true:false'}"style="display: block" class="isDisabled"  routerLink="/email">Email</a>-->
+        </td>
+
+    </tbody>
+</table>
+<app-pagination [currentPage]="page"></app-pagination>

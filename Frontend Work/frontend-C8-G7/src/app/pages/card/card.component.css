@@ -1,0 +1,49 @@
+.fa-heart {
+    color :palevioletred;
+    cursor : pointer;
+}
+.pro {
+    font-size:18px;
+    color: blue;
+}
+.proin {
+    font-size:15px;
+    color: crimson;
+}
+h3 {
+    font-family: Verdana, Geneva, Tahoma;
+    background-color: lightgreen;
+    border: 2px solid green;
+}
+.boxs {
+    border:  3px solid black;
+}
+b {  
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;  
+}
+#deal {
+    font-size: 20px;
+    font-weight: bold;
+}
+#sub_deal {
+    font-size: 20px;
+    color: rgb(183, 3, 3);
+}
+img {
+    /* height: 250px; */
+    margin: 0;
+    padding: 0;
+}
+.shad:hover {
+    box-shadow: 0 0 10px rgba(33,33,33,.8);
+}
+.img_size:hover {
+    box-shadow: 0 0 10px rgba(33,33,33,.8);
+    transition: all .3s ease-in-out; 
+    transform: scale(1.08);
+}
+.form_var {
+    color: brown;
+    font-weight: bold;
+}

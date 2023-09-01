@@ -1,0 +1,12 @@
+{
+  "productId": "B0003",
+  "productName": "Analog Round Clock",
+  "productPrice": 3599,
+  "productStock": 210,
+  "productDescription": "Golden Metal Analog Round Clock Craftter",
+  "productIcon": "https://ii2.pepperfry.com/media/catalog/product/g/o/494x544/golden-metal-analog-round-clock-golden-metal-analog-round-clock-1aausi.jpg",
+  "productStatus": 0,
+  "categoryType": 1,
+  "createTime": "2022-07-17T05:15:29.000+0000",
+  "updateTime": "2022-07-23T09:46:03.889+0000"
+}
