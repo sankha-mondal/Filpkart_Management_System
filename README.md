@@ -59,6 +59,10 @@ Install MySQL -> after installation -> search MySQL
 Give password which you provide at the time of installation.
 Create Database with name "projectdb". Then run queries provided in sql_database.sql script one by one.
 
+## Home Page:
+![HomePage](https://github.com/sankha-mondal/Flipkart_Management_System/assets/99641675/0e24900b-de16-4f54-9dae-da832a0dfaf7)
+
+
 
 ## How to  Run
 
@@ -112,6 +116,5 @@ Modules:
   - You can use Admin email: admin@eshop.com, password: admin
 
 ```
-
 
 
